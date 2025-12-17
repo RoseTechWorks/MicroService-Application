@@ -190,7 +190,7 @@ pipeline {
                     credentialsId: 'k8s',
                     namespace: 'webapps',
                     restrictKubeConfigAccess: false,
-                    serverUrl: 'https://164E26B4CF9979625E425CA707EABA03.gr7.us-east-1.eks.amazonaws.com'
+                    serverUrl: 'https://61E42CB112793F341E97C43BFEDDD7CE.gr7.us-east-2.eks.amazonaws.com'
                 ) {
                     sh 'kubectl apply -f deployment-service.yaml'
                     sh 'kubectl get pods'
