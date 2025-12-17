@@ -1,20 +1,26 @@
 pipeline {
     agent any
-     // environment {
-       // SCANNER_HOME = tool 'sonar-scanner'
 
- //  }
-
-    stages {
-         //   stage('SonarQube') {
-       //      steps {
-        //        withSonarQubeEnv('sonar-scanner') {
-          //          sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Microservice_Deployment -Dsonar.ProjectName=Microservice_Deployment -Dsonar.java.binaries=.'''
-            //    }
-         //   }
-       // }
+    // environment {
+    //     SCANNER_HOME = tool 'sonar-scanner'
+    // }
 
     stages {
+
+        /*
+        stage('SonarQube') {
+            steps {
+                withSonarQubeEnv('sonar-scanner') {
+                    sh '''
+                    $SCANNER_HOME/bin/sonar-scanner \
+                    -Dsonar.projectKey=Microservice_Deployment \
+                    -Dsonar.projectName=Microservice_Deployment \
+                    -Dsonar.java.binaries=.
+                    '''
+                }
+            }
+        }
+        */
 
         stage('adservice') {
             steps {
@@ -24,7 +30,7 @@ pipeline {
                             sh "docker build -t RoseTechWorks/adservice:latest ."
                             sh "docker push RoseTechWorks/adservice:latest"
                             sh "docker rmi RoseTechWorks/adservice:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -35,11 +41,11 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/cartservice/src/") {
+                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/cartservice/src/') {
                             sh "docker build -t RoseTechWorks/cartservice:latest ."
                             sh "docker push RoseTechWorks/cartservice:latest"
                             sh "docker rmi RoseTechWorks/cartservice:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -50,11 +56,11 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/checkoutservice/") {
+                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/checkoutservice/') {
                             sh "docker build -t RoseTechWorks/checkoutservice:latest ."
                             sh "docker push RoseTechWorks/checkoutservice:latest"
                             sh "docker rmi RoseTechWorks/checkoutservice:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -65,11 +71,11 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/currencyservice/") {
+                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/currencyservice/') {
                             sh "docker build -t RoseTechWorks/currencyservice:latest ."
                             sh "docker push RoseTechWorks/currencyservice:latest"
                             sh "docker rmi RoseTechWorks/currencyservice:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -80,11 +86,11 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/emailservice/") {
+                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/emailservice/') {
                             sh "docker build -t RoseTechWorks/emailservice:latest ."
                             sh "docker push RoseTechWorks/emailservice:latest"
                             sh "docker rmi RoseTechWorks/emailservice:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -95,11 +101,11 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/frontend/") {
+                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/frontend/') {
                             sh "docker build -t RoseTechWorks/frontend:latest ."
                             sh "docker push RoseTechWorks/frontend:latest"
                             sh "docker rmi RoseTechWorks/frontend:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -110,11 +116,11 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/loadgenerator/") {
+                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/loadgenerator/') {
                             sh "docker build -t RoseTechWorks/loadgenerator:latest ."
                             sh "docker push RoseTechWorks/loadgenerator:latest"
                             sh "docker rmi RoseTechWorks/loadgenerator:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -125,11 +131,11 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/paymentservice/") {
+                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/paymentservice/') {
                             sh "docker build -t RoseTechWorks/paymentservice:latest ."
                             sh "docker push RoseTechWorks/paymentservice:latest"
                             sh "docker rmi RoseTechWorks/paymentservice:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -140,11 +146,11 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/productcatalogservice/") {
+                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/productcatalogservice/') {
                             sh "docker build -t RoseTechWorks/productcatalogservice:latest ."
                             sh "docker push RoseTechWorks/productcatalogservice:latest"
                             sh "docker rmi RoseTechWorks/productcatalogservice:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -155,11 +161,11 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/recommendationservice/") {
+                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/recommendationservice/') {
                             sh "docker build -t RoseTechWorks/recommendationservice:latest ."
                             sh "docker push RoseTechWorks/recommendationservice:latest"
                             sh "docker rmi RoseTechWorks/recommendationservice:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -170,11 +176,11 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/shippingservice/") {
+                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/shippingservice/') {
                             sh "docker build -t RoseTechWorks/shippingservice:latest ."
                             sh "docker push RoseTechWorks/shippingservice:latest"
                             sh "docker rmi RoseTechWorks/shippingservice:latest"
-                            sh 'docker system prune -a -f --volumes'
+                            sh "docker system prune -a -f --volumes"
                         }
                     }
                 }
@@ -184,12 +190,9 @@ pipeline {
         stage('EKS-Deployment') {
             steps {
                 withKubeConfig(
-                    caCertificate: '',
                     clusterName: 'my-cluster',
-                    contextName: '',
                     credentialsId: 'k8s',
                     namespace: 'webapps',
-                    restrictKubeConfigAccess: false,
                     serverUrl: 'https://61E42CB112793F341E97C43BFEDDD7CE.gr7.us-east-2.eks.amazonaws.com'
                 ) {
                     sh 'kubectl apply -f deployment-service.yaml'
