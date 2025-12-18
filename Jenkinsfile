@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/adservice/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/adservice/') {
                             sh "docker build -t naomitechworks/adservice:latest ."
                             sh "docker push naomitechworks/adservice:latest"
                             sh "docker rmi naomitechworks/adservice:latest"
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/cartservice/src/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/cartservice/src/') {
                             sh "docker build -t naomitechworks/cartservice:latest ."
                             sh "docker push naomitechworks/cartservice:latest"
                             sh "docker rmi naomitechworks/cartservice:latest"
@@ -56,7 +56,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/checkoutservice/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/checkoutservice/') {
                             sh "docker build -t naomitechworks/checkoutservice:latest ."
                             sh "docker push naomitechworks/checkoutservice:latest"
                             sh "docker rmi naomitechworks/checkoutservice:latest"
@@ -71,7 +71,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/currencyservice/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/currencyservice/') {
                             sh "docker build -t naomitechworks/currencyservice:latest ."
                             sh "docker push naomitechworks/currencyservice:latest"
                             sh "docker rmi naomitechworks/currencyservice:latest"
@@ -86,7 +86,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/emailservice/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/emailservice/') {
                             sh "docker build -t naomitechworks/emailservice:latest ."
                             sh "docker push naomitechworks/emailservice:latest"
                             sh "docker rmi naomitechworks/emailservice:latest"
@@ -101,7 +101,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/frontend/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/frontend/') {
                             sh "docker build -t naomitechworks/frontend:latest ."
                             sh "docker push naomitechworks/frontend:latest"
                             sh "docker rmi naomitechworks/frontend:latest"
@@ -116,7 +116,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/loadgenerator/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/loadgenerator/') {
                             sh "docker build -t naomitechworks/loadgenerator:latest ."
                             sh "docker push naomitechworks/loadgenerator:latest"
                             sh "docker rmi naomitechworks/loadgenerator:latest"
@@ -131,7 +131,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/paymentservice/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/paymentservice/') {
                             sh "docker build -t naomitechworks/paymentservice:latest ."
                             sh "docker push naomitechworks/paymentservice:latest"
                             sh "docker rmi naomitechworks/paymentservice:latest"
@@ -146,7 +146,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/productcatalogservice/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/productcatalogservice/') {
                             sh "docker build -t naomitechworks/productcatalogservice:latest ."
                             sh "docker push naomitechworks/productcatalogservice:latest"
                             sh "docker rmi naomitechworks/productcatalogservice:latest"
@@ -161,7 +161,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/recommendationservice/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/recommendationservice/') {
                             sh "docker build -t naomitechworks/recommendationservice:latest ."
                             sh "docker push naomitechworks/recommendationservice:latest"
                             sh "docker rmi naomitechworks/recommendationservice:latest"
@@ -176,7 +176,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/shippingservice/') {
+                        dir('/var/lib/jenkins/workspace/Microservice_App/src/shippingservice/') {
                             sh "docker build -t naomitechworks/shippingservice:latest ."
                             sh "docker push naomitechworks/shippingservice:latest"
                             sh "docker rmi naomitechworks/shippingservice:latest"
