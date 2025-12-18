@@ -27,9 +27,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/adservice/') {
-                            sh "docker build -t RoseTechWorks/adservice:latest ."
-                            sh "docker push RoseTechWorks/adservice:latest"
-                            sh "docker rmi RoseTechWorks/adservice:latest"
+                            sh "docker build -t rosetechworks/adservice:latest ."
+                            sh "docker push rosetechworks/adservice:latest"
+                            sh "docker rmi rosetechworks/adservice:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
@@ -42,9 +42,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/cartservice/src/') {
-                            sh "docker build -t RoseTechWorks/cartservice:latest ."
-                            sh "docker push RoseTechWorks/cartservice:latest"
-                            sh "docker rmi RoseTechWorks/cartservice:latest"
+                            sh "docker build -t rosetechworks/cartservice:latest ."
+                            sh "docker push rosetechworks/cartservice:latest"
+                            sh "docker rmi rosetechworks/cartservice:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
@@ -57,9 +57,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/checkoutservice/') {
-                            sh "docker build -t RoseTechWorks/checkoutservice:latest ."
-                            sh "docker push RoseTechWorks/checkoutservice:latest"
-                            sh "docker rmi RoseTechWorks/checkoutservice:latest"
+                            sh "docker build -t rosetechworks/checkoutservice:latest ."
+                            sh "docker push rosetechworks/checkoutservice:latest"
+                            sh "docker rmi rosetechworks/checkoutservice:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
@@ -72,9 +72,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/currencyservice/') {
-                            sh "docker build -t RoseTechWorks/currencyservice:latest ."
-                            sh "docker push RoseTechWorks/currencyservice:latest"
-                            sh "docker rmi RoseTechWorks/currencyservice:latest"
+                            sh "docker build -t rosetechworks/currencyservice:latest ."
+                            sh "docker push rosetechworks/currencyservice:latest"
+                            sh "docker rmi rosetechworks/currencyservice:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
@@ -87,9 +87,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/emailservice/') {
-                            sh "docker build -t RoseTechWorks/emailservice:latest ."
-                            sh "docker push RoseTechWorks/emailservice:latest"
-                            sh "docker rmi RoseTechWorks/emailservice:latest"
+                            sh "docker build -t rosetechworks/emailservice:latest ."
+                            sh "docker push rosetechworks/emailservice:latest"
+                            sh "docker rmi rosetechworks/emailservice:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
@@ -102,9 +102,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/frontend/') {
-                            sh "docker build -t RoseTechWorks/frontend:latest ."
-                            sh "docker push RoseTechWorks/frontend:latest"
-                            sh "docker rmi RoseTechWorks/frontend:latest"
+                            sh "docker build -t rosetechworks/frontend:latest ."
+                            sh "docker push rosetechworks/frontend:latest"
+                            sh "docker rmi rosetechworks/frontend:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
@@ -117,9 +117,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/loadgenerator/') {
-                            sh "docker build -t RoseTechWorks/loadgenerator:latest ."
-                            sh "docker push RoseTechWorks/loadgenerator:latest"
-                            sh "docker rmi RoseTechWorks/loadgenerator:latest"
+                            sh "docker build -t rosetechworks/loadgenerator:latest ."
+                            sh "docker push rosetechworks/loadgenerator:latest"
+                            sh "docker rmi rosetechworks/loadgenerator:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
@@ -132,9 +132,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/paymentservice/') {
-                            sh "docker build -t RoseTechWorks/paymentservice:latest ."
-                            sh "docker push RoseTechWorks/paymentservice:latest"
-                            sh "docker rmi RoseTechWorks/paymentservice:latest"
+                            sh "docker build -t rosetechworks/paymentservice:latest ."
+                            sh "docker push rosetechworks/paymentservice:latest"
+                            sh "docker rmi rosetechworks/paymentservice:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
@@ -147,9 +147,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/productcatalogservice/') {
-                            sh "docker build -t RoseTechWorks/productcatalogservice:latest ."
-                            sh "docker push RoseTechWorks/productcatalogservice:latest"
-                            sh "docker rmi RoseTechWorks/productcatalogservice:latest"
+                            sh "docker build -t rosetechworks/productcatalogservice:latest ."
+                            sh "docker push rosetechworks/productcatalogservice:latest"
+                            sh "docker rmi rosetechworks/productcatalogservice:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
@@ -162,9 +162,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/recommendationservice/') {
-                            sh "docker build -t RoseTechWorks/recommendationservice:latest ."
-                            sh "docker push RoseTechWorks/recommendationservice:latest"
-                            sh "docker rmi RoseTechWorks/recommendationservice:latest"
+                            sh "docker build -t rosetechworks/recommendationservice:latest ."
+                            sh "docker push rosetechworks/recommendationservice:latest"
+                            sh "docker rmi rosetechworks/recommendationservice:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
@@ -177,9 +177,9 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Microservice_Deployment/src/shippingservice/') {
-                            sh "docker build -t RoseTechWorks/shippingservice:latest ."
-                            sh "docker push RoseTechWorks/shippingservice:latest"
-                            sh "docker rmi RoseTechWorks/shippingservice:latest"
+                            sh "docker build -t rosetechworks/shippingservice:latest ."
+                            sh "docker push rosetechworks/shippingservice:latest"
+                            sh "docker rmi rosetechworks/shippingservice:latest"
                             sh "docker system prune -a -f --volumes"
                         }
                     }
