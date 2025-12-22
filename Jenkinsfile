@@ -190,10 +190,10 @@ pipeline {
         stage('EKS-Deployment') {
             steps {
                 withKubeConfig(
-                    clusterName: 'my-cluster',
+                    clusterName: 'my-cluster1',
                     credentialsId: 'k8s',
                     namespace: 'webapps',
-                    serverUrl: 'https://61E42CB112793F341E97C43BFEDDD7CE.gr7.us-east-2.eks.amazonaws.com'
+                    serverUrl: 'https://66C995335E03B26E44A90917D3DFEAC1.gr7.us-east-2.eks.amazonaws.com'
                 ) {
                     sh 'kubectl apply -f deployment-service.yaml'
                     sh 'kubectl get pods'
