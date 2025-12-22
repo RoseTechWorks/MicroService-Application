@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/Microservice_App/src/adservice/') {
+                        dir('src/adservice') {
                             sh "docker build -t naomitechworks/adservice:latest ."
                             sh "docker push naomitechworks/adservice:latest"
                             sh "docker rmi naomitechworks/adservice:latest"
